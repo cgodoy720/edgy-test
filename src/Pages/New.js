@@ -1,9 +1,9 @@
 import CreateNote from "../Components/CreateNote";
 
-export const New = () => {
+export default function New() {
   return (
     <div className="New">
       <CreateNote />
     </div>
   );
-};
+}

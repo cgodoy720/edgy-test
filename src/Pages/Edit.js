@@ -1,9 +1,9 @@
 import EditNote from "../Components/EditNote";
 
-export const Edit = () => {
+export default function Edit() {
   return (
     <div className="Edit">
       <EditNote />
     </div>
   );
-};
+}

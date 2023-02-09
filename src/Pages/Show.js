@@ -1,9 +1,9 @@
 import NoteDetails from "../Components/NoteDetails";
 
-export const Show = () => {
+export default function Show() {
   return (
     <div>
       <NoteDetails />
     </div>
   );
-};
+}
