@@ -4,7 +4,7 @@ export default function Note({
   note: { id, title, content, date, time, is_bookmark },
 }) {
   return (
-    <Link to={`/notes/:{id}`}>
+    <Link to={`/notes/${id}`}>
       {" "}
       <div className="single_note">
         <header>
