@@ -52,6 +52,7 @@ function NoteDetails() {
       </div>
       <footer>
         <p>{note.is_bookmark ? "⭐️" : null}</p>
+        {/* // TODO: For history */}
         <button disabled="disabled">✅</button>
       </footer>
       <div>
