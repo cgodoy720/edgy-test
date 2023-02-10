@@ -76,7 +76,7 @@ export default function CreateNote() {
         <br />
         <label htmlFor="time">Time</label>
         <input
-          type="text"
+          type="time"
           id="time"
           value={newNote.time}
           placeholder="Click to add time"

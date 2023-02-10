@@ -3,7 +3,11 @@ export default function Navigation() {
   // let navigate = useNavigate();
   return (
     <div className="Navigation">
-      <h1>Welcome to Note-It</h1>
+      <Link to={`/notes`}>
+        {" "}
+        <h1>Welcome to Note-It</h1>
+      </Link>
+
       <Link to={`/notes/new`}>
         <button>New</button>
       </Link>
