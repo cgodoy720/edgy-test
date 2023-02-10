@@ -3,7 +3,6 @@ import axios from "axios";
 import Note from "./Note";
 //*
 const API = process.env.REACT_APP_API_URL;
-console.log("API CALL", API);
 
 export default function Notes() {
   const [myNotes, setNotes] = useState([]);
@@ -18,7 +17,7 @@ export default function Notes() {
   return (
     <div className="Notes">
       {myNotes.map((note) => {
-        <p>{console.log(note)}</p>
+        <p>{console.log(note)}</p>;
         return <Note key={note.id} note={note} />;
       })}
     </div>

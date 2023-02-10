@@ -10,7 +10,7 @@ export default function Note({
         <header>
           <span>
             {" "}
-            <h3>{title}</h3> <p>{date}</p> <p>{time}</p>  
+            <h3>{title}</h3> <b>{date}</b> <b>{time}</b>
           </span>
         </header>
         <div className="note-body">
