@@ -55,15 +55,15 @@ function NoteDetails() {
         {/* // TODO: For history */}
         <button disabled="disabled">✅</button>
       </footer>
-      <div>
-        <Link></Link>
+      <div className="note-buttons">
         <button onClick={deleteNote}>🗑️</button>
         <Link to={`/notes/${id}/edit`}>
           {" "}
           <button>📝</button>
         </Link>
-
-        <button>Back</button>
+        <Link to={`/notes`}>
+          <button>Back</button>
+        </Link>
       </div>
     </div>
   );

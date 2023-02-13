@@ -32,7 +32,7 @@ export default function CreateNote() {
   const handleTextChange = (e) => {
     setNewNote({ ...newNote, [e.target.id]: e.target.value });
   };
-  // Submit
+  // SUBMIT
   const handleSubmit = (e) => {
     e.preventDefault();
     addNewNote(newNote);

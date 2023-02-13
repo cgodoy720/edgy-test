@@ -32,7 +32,7 @@ export default function EditNote() {
 
   //TextChange
   const handleTextChange = (e) => {
-    setEdit({ ...note, [e.target.id]: e.target.value });
+    setEdit({ ...note, [e.target.id]: e.target.value});
   };
   // CheckBox
   const handleCheckChange = () => {
@@ -45,6 +45,7 @@ export default function EditNote() {
       (error) => navigate("/not-found")
     );
   }, [id, navigate]);
+  
   // Submit
   const handleSubmit = (e) => {
     e.preventDefault();

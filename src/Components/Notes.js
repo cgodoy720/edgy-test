@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, } from "react";
 import axios from "axios";
 import Note from "./Note";
 //*
@@ -14,11 +14,12 @@ export default function Notes() {
       .catch((error) => console.warn(error));
   }, []);
 
+
   return (
     <div className="Notes">
       {myNotes.map((note) => {
         <p>{console.log(note)}</p>;
-        return <Note key={note.id} note={note} />;
+        return <Note key={note.id} note={note}  />;
       })}
     </div>
   );
