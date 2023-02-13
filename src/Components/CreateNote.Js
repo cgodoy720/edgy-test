@@ -21,7 +21,8 @@ export default function CreateNote() {
       .post(`${API}/notes`, addedNote)
       .then(
         () => {
-          navigate("/notes");
+          // navigate("/notes");
+          window.location.reload();
         },
         (error) => console.log(error)
       )
@@ -41,6 +42,18 @@ export default function CreateNote() {
   const handleCheckChange = () => {
     setNewNote({ ...newNote, is_bookmark: !newNote.is_bookmark });
   };
+
+  //! Character Count Feature
+  const characterLimit = 120;
+  const handleCharacterCount = (e) => {
+    console.log(newNote.content);
+    if (characterLimit - newNote.content.length >= 0) {
+      setNewNote({ ...newNote, [e.target.id]: e.target.value });
+    } else {
+      console.log("Character LIMIT REACHED");
+    }
+  };
+
   return (
     <div className="CreateNote">
       <br />
@@ -55,14 +68,27 @@ export default function CreateNote() {
         />
         <br />
         <label htmlFor="content">Note:</label>
-        <input
+        {/* <input
           type="text"
           id="content"
           value={newNote.content}
           placeholder="Click to add text"
           onChange={handleTextChange}
           required
-        />
+        /> */}
+        <textarea
+          placeholder="Click to add text"
+          id="content"
+          value={newNote.content}
+          onChange={handleCharacterCount}
+          required
+          rows="10"
+          cols="10"
+        ></textarea>
+        {/* //! CharCount */}
+        <div className="charCount">
+          {characterLimit - newNote.content.length} Characters Remaining
+        </div>
         <br />
         <label htmlFor="date">Date:</label>
         <input

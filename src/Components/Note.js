@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 //TODO: Import HOWLER
-
+import "./Notes.css";
 export default function Note({
   note: { id, title, content, date, time, is_bookmark },
 }) {
   return (
-    <div className="container">
+    <div className="Note">
       {" "}
       <div className="single_note">
         <Link to={`/notes/${id}`}>
@@ -22,10 +22,8 @@ export default function Note({
             <p>{is_bookmark ? "⭐️" : null}</p>
           </footer>
         </Link>
-     <button>✅</button>
-      </div> 
-    </div>
-   
-      
+        <button>✅</button>
+      </div>
+       </div>
   );
 }

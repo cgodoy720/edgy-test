@@ -1,0 +1,11 @@
+.Note {
+  margin-bottom: 15px;
+  border-radius: 20px;
+  background-color: antiquewhite;
+  padding: 1.5rem;
+  min-height: 200px;
+  /* Diplay horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

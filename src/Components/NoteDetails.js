@@ -1,7 +1,8 @@
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+//CSS
+import "./NoteDetails.css";
 //TODO: Import DragDrop WHen Added
 
 const API = process.env.REACT_APP_API_URL;
@@ -35,7 +36,7 @@ function NoteDetails() {
   };
 
   return (
-    <div className="NoteDeails">
+    <div className="NoteDetails">
       <h2>
         {note.title}
         {note.is_bookmark ? "⭐️" : null}

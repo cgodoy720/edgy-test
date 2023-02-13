@@ -9,7 +9,7 @@ export default function Navigation() {
       </Link>
 
       <Link to={`/notes/new`}>
-        <button>New</button>
+        <button>Create</button>
       </Link>
     </div>
   );

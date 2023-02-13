@@ -53,7 +53,8 @@ export default function EditNote() {
   };
   return (
     <div className="EditNote">
-      <form onSubmit={handleSubmit}>
+    
+     <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
         <input
           type="text"
@@ -64,14 +65,20 @@ export default function EditNote() {
         />
         <br />
         <label htmlFor="content">Note:</label>
-        <input
+        {/* <input
           type="text"
           id="content"
           value={note.content}
           placeholder="Click to add text"
           onChange={handleTextChange}
           required
-        />
+        /> */}
+        <textarea id="content"
+        rows= "10"
+        cold= "10"
+          value={note.content}
+          placeholder="Click to add text" onChange={handleTextChange}></textarea>
+          <p>WORD COUNTER</p>
         <br />
         <label htmlFor="date">Date:</label>
         <input
@@ -100,7 +107,9 @@ export default function EditNote() {
           onChange={handleCheckChange}
         />
         <input type="submit" />
-      </form>
+      </form> 
+
+
     </div>
   );
 }
