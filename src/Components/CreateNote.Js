@@ -68,15 +68,7 @@ export default function CreateNote() {
         />
         <br />
         <label htmlFor="content">Note:</label>
-        {/* <input
-          type="text"
-          id="content"
-          value={newNote.content}
-          placeholder="Click to add text"
-          onChange={handleTextChange}
-          required
-        /> */}
-        <textarea
+             <textarea
           placeholder="Click to add text"
           id="content"
           value={newNote.content}

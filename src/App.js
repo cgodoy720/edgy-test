@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Components
 import Files from "./Components/Files";
@@ -13,10 +14,14 @@ import Edit from "./Pages/Edit";
 import Error from "./Pages/Error";
 
 function App() {
-  return (
+  //DarkMode
+  const [mode, setMode]= useState(false)
+  
+  return ( 
+    <div className={`${mode &&  'Darkmode'}`}> 
     <div className="App">
       <Router>
-        <Navigation />
+        <Navigation toggle ={setMode}  />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/notes" element={<Index />} />
@@ -25,9 +30,10 @@ function App() {
           <Route path="/notes/:id/edit" element={<Edit />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        <Files  />
+        <Files />
       </Router>
-    </div>
+    </div></div>
+   
   );
 }
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Note from "./Note";
+import { SearchBar } from "./SearchBar";
 // CSS
 import "./Notes.css";
 //*
@@ -12,8 +13,11 @@ export default function Notes({
   handleSubmit,
   handleTextChange,
   handleCheckChange,
+  handleSearch,
 }) {
   const [myNotes, setNotes] = useState([]);
+  //! Search State - Save user Input
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios
@@ -23,16 +27,21 @@ export default function Notes({
   }, []);
 
   return (
-    <div className="Notes">
-      {myNotes.map((note) => {
-        <p>{console.log(note)}</p>;
-        return <Note key={note.id} note={note} />;
-      })}
-      <CreateNote
-        handleSubmit={handleSubmit}
-        handleCheckChange={handleCheckChange}
-        handleTextChnage={handleTextChange}
-      />
-    </div>
+    <>
+      <div className="Notes-Container">
+        <SearchBar handleSearch={setSearch} />
+        {/* //TODO: FILTER to search for notes that include user inputs */}
+        {/* {myNotes.filter((note)=>(note.content.toLowerCase().includes(handleSearch)))}  */}
+
+        {myNotes.map((note) => {
+          return <Note key={note.id} note={note} />;
+        })}
+        <CreateNote
+          handleSubmit={handleSubmit}
+          handleCheckChange={handleCheckChange}
+          handleTextChnage={handleTextChange}
+        />
+      </div>{" "}
+    </>
   );
 }

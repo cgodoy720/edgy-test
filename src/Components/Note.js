@@ -7,8 +7,8 @@ export default function Note({
   return (
     <div className="Note">
       {" "}
-      <div className="single_note">
-        <Link to={`/notes/${id}`}>
+       <div className="single_note">
+       <Link to={`/notes/${id}`}>
           <header>
             <span>
               {" "}
