@@ -6,7 +6,7 @@ export default function Navigation({toggle}) {
     <div className="Navigation">
       <Link to={`/notes`}>
         {" "}
-        <h1>Welcome to <em> Note-It</em></h1>
+        <h1><em> Note-It</em></h1>
       </Link>
 
       {/* <Link to={`/notes/new`}>

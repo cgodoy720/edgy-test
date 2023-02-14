@@ -16,15 +16,6 @@ background-color: black;
 .Darkmode h1 {
 color: azure;
 }
-.CreateNote{
-    margin-bottom: 15px;
-    border-radius: 20px;
-    background-color:forestgreen;
-    padding: 1.5rem;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-}
+
 
 
