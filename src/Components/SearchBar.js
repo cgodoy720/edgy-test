@@ -1,7 +1,7 @@
 import "./Search.css";
 import { MdSearch } from "react-icons/md";
 
-export const SearchBar = ({ setSearch, setMyNotes, myNotes, setFiltered }) => {
+export const SearchBar = ({ setSearch, myNotes, setFiltered }) => {
   //HandleSearch
   const handleSearch = (e) => {
     e.preventDefault();
