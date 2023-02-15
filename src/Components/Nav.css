@@ -1,4 +1,4 @@
-.Navigation {
+/* .Navigation {
   display: flex;
   justify-content: space-between;
   border-bottom: 3px solid black;
@@ -8,7 +8,7 @@
 .Navigation a {
   text-decoration: none;
   color: black;
-}
+} */
 
 .Darkmode{
 background-color: black;

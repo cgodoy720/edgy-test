@@ -6,10 +6,10 @@ import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-const KEY = process.env.REACT_APP_KEY;
+// const KEY = process.env.REACT_APP_KEY;
 
 const firebaseConfig = {
-  apiKey: "KEY",
+  apiKey: "process.env.REACT_APP_KEY",
   authDomain: "note-it-authentication.firebaseapp.com",
   projectId: "note-it-authentication",
   storageBucket: "note-it-authentication.appspot.com",

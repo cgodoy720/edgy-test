@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import Files from "../Components/Files";
+// import Files from "../Components/Files";
+
 // import drag context ftom beaiful dnd
 // Dropable -- sets an area that allows for individual items to move around
 // Draggablle -- raps every li items so that they can be dragged
@@ -34,7 +35,7 @@ export default function Note({
                     </div>
                   </Link>
                   {/* <button>✅</button> */}
-                  <Files />
+                  {/* <Files /> */}
                 </li>
               {/* </Draggable> */}
             </ul>

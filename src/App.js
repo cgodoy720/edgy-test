@@ -16,26 +16,25 @@ import Error from "./Pages/Error";
 
 function App() {
   //DarkMode
-  const [mode, setMode]= useState(false)
-  
-  return ( 
-    <div className={`${mode &&  'Darkmode'}`}> 
-    <div className="App">
-      <Router>
-        <Navigation toggle ={setMode}  />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/notes" element={<Index />} />
-          <Route path="/notes/:id" element={<Show />} />
-          <Route path="/notes/new" element={<New />} />
-          <Route path="/notes/:id/edit" element={<Edit />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-    
-      </Router>
-    </div></div>
-   
+  const [mode, setMode] = useState(false);
+
+  return (
+    <div className={`${mode && "Darkmode"}`}>
+      <div className=" min-h-[100vh] bg-yellow-500">
+        <Router>
+          <Navigation toggle={setMode} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/notes" element={<Index />} />
+            <Route path="/notes/:id" element={<Show />} />
+            <Route path="/notes/new" element={<New />} />
+            <Route path="/notes/:id/edit" element={<Edit />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </Router>
+      </div>
+    </div>
   );
 }
 

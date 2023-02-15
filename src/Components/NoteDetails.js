@@ -36,34 +36,32 @@ function NoteDetails() {
   };
 
   return (
-    <div className="NoteDetails">
-      <h2>
-        {note.title}
-        {note.is_bookmark ? "⭐️" : null}
-      </h2>
-
-      <header>
-        <span>
-          {" "}
-          <h3>{note.title}</h3> <b>{note.date}</b> <b>{note.time}</b>
-        </span>
+    <div className="bg-blue-300 w-2/3 h-72 flex flex-col items-center">
+      <header className="flex justify-evenly p-5">
+        <h3 className="mx-3">
+          <span>{note.title} </span>
+          <span>{note.is_bookmark ? "⭐️" : null}</span>
+        </h3>
+        <h3 className="mx-3">
+          <span>{note.date}</span> @
+          <span> {note.time}</span>
+        </h3>
       </header>
       <div className="note-body">
         <p>{note.content}</p>
       </div>
-      <footer>
+      {/* <footer>
         <p>{note.is_bookmark ? "⭐️" : null}</p>
-        {/* // TODO: For history */}
-        <button disabled="disabled">✅</button>
-      </footer>
-      <div className="note-buttons">
-        <button onClick={deleteNote}>🗑️</button>
+              <button disabled="disabled">✅</button>
+      </footer> */}
+      <div className="flex bg-red-400 my-auto justify-around ">
+        <button className=" bg-neutral-800 hover:bg-red-800 py-2 px-4 rounded-md" onClick={deleteNote}>🗑️</button>
         <Link to={`/notes/${id}/edit`}>
           {" "}
-          <button>📝</button>
+          <button className="bg-neutral-800 hover:bg-green-700 py-2 px-4 rounded-md">📝</button>
         </Link>
         <Link to={`/notes`}>
-          <button>Back</button>
+          <button className="bg-neutral-800 hover:bg-yellow-500 py-2 px-3 rounded-md text-white font-bold">Back</button>
         </Link>
       </div>
     </div>

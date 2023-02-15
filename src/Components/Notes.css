@@ -1,10 +1,27 @@
 .Note {
-  margin-bottom: 15px;
+  /* margin-bottom: 15px;
   border-radius: 20px;
   background-color: antiquewhite;
   padding: 1.5rem;
   min-height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
+}
+
+.Notes-Container {
+  /* background-color: aquamarine;
+  display: flex; */
+}
+
+.Notes li {
+  /* list-style: none;
+
+  border-radius: 10px;
+  background-color: skyblue;
+  padding: 1rem;
+  margin: 10px;
+  width: 25%;
+  min-height: 170px;
+  flex-direction: column; */
 }
