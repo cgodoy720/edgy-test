@@ -1,11 +1,27 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {FiX} from "react-icons/fi"
-import {ImPlus} from "react-icons/im"
+import { FiX } from "react-icons/fi";
+import { ImPlus } from "react-icons/im";
+//
+import { Howl } from "howler";
+//
+import error from ".././assets/error.mp3";
 //
 const API = process.env.REACT_APP_API_URL;
 export default function CreateNote() {
+  // Create a function to play your sound effect
+  const playMySound = (src) => {
+    // sound is new instance of howl
+    const mySound = new Howl({
+      // src, where sound is coming from
+      src,
+      volume: 0.15,
+      html5: true,
+    });
+    // to play the sound effect when function is called
+    mySound.play();
+  };
   // FormModal
   const [formModal, setFormModal] = useState(false);
   // New Note
@@ -50,15 +66,15 @@ export default function CreateNote() {
   const characterLimit = 120;
   const handleCharacterCount = (e) => {
     console.log(newNote.content);
-    if (characterLimit - newNote.content.length >= 0) {
+    if (characterLimit - newNote.content.length >= 1) {
       setNewNote({ ...newNote, [e.target.id]: e.target.value });
     } else {
-      console.log("Character LIMIT REACHED");
+      playMySound(error);
     }
   };
 
   return (
-    <div 
+    <div
     // className=" w-80 h-[10rem] "
     >
       {formModal ? (
@@ -66,16 +82,25 @@ export default function CreateNote() {
           className="bg-emerald-400 h-[25rem] absolute z-10 m-4 p-3"
           onSubmit={handleSubmit}
         >
-           <button
-                onClick={() => {
-                  setFormModal(false);
-                }}
-                className="bg-green-500 p-2 rounded-md mb-2 ml-[90%]"
-              >
-               <FiX/>
-              </button>
-              <br/>
-          <label className="font-bold" htmlFor="title"> Title </label>
+          <button
+            onClick={() => {
+             setNewNote({
+              title: "",
+              content: "",
+              date: "",
+              time: "",
+              is_bookmark: false,
+            }); setFormModal(false);
+            }}
+            className="bg-green-500 p-2 rounded-md mb-2 ml-[90%]"
+          >
+            <FiX />
+          </button>
+          <br />
+          <label className="font-bold" htmlFor="title">
+            {" "}
+            Title{" "}
+          </label>
           <input
             className="w-full  bg-emerald-400 leading-tight focus:outline-none"
             type="text"
@@ -84,9 +109,9 @@ export default function CreateNote() {
             placeholder="Click to add title"
             onChange={handleTextChange}
           />
-               
-
-          <label className="font-bold" htmlFor="content">Description:</label>
+          <label className="font-bold" htmlFor="content">
+            Description:
+          </label>
           <textarea
             className=" bg-emerald-400 w-full focus:outline-none resize-none"
             placeholder="Click to add text"
@@ -101,7 +126,6 @@ export default function CreateNote() {
           <div className="p-2 ">
             {characterLimit - newNote.content.length} Characters Remaining
           </div>
-
           {/* <label htmlFor="date">Date:</label> */}
           <input
             className=" bg-emerald-400 focus:outline-none hover:cursor-pointer"
@@ -113,7 +137,7 @@ export default function CreateNote() {
             required
           />
           {/* <label className="ml-2 " htmlFor="time"> */}
-            Time:
+          Time:
           {/* </label> */}
           <input
             className="focus:outline-none bg-emerald-400 hover:cursor-pointer"
@@ -127,7 +151,7 @@ export default function CreateNote() {
           <div>
             <div className="py-4">
               {/* <label className=" mr-2" htmlFor="is_bookmark"> */}
-                Favorite
+              Favorite
               {/* </label> */}
               <input
                 type="checkbox"
@@ -138,15 +162,14 @@ export default function CreateNote() {
             </div>
             <div className="flex  justify-evenly">
               <input className="bg-green-500 p-1 rounded-md" type="submit" />
-              
             </div>
           </div>
         </form>
       ) : (
-        <div onClick={() => setFormModal(true)} className="flex items-center justify-center pt-2">
-          {/* <button className="mt-16 " onClick={() => setFormModal(true)}>
-            CREATE+
-          </button> */}
+        <div
+          onClick={() => setFormModal(true)}
+          className="flex items-center justify-center pt-2"
+        >
           <a
             href="#_"
             className="relative inline-flex items-center justify-start  px-40 py-16 overflow-hidden font-bold rounded-full group"
@@ -155,10 +178,8 @@ export default function CreateNote() {
 
             <span className="absolute top-0 left-0 w-60 h-60 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-y-60 -translate-x-36 bg-white opacity-100 group-hover:-translate-y-8"></span>
 
-            {/* <span className="absolute top-0 left-0 w-68 h-60 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-white opacity-100 group-hover:-translate-x-8"></span> */}
-
-            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">
-            <ImPlus/>
+                  <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">
+              <ImPlus />
             </span>
             <span className="absolute inset-0 border-2 border-white rounded-full"></span>
           </a>

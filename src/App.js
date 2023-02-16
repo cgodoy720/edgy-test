@@ -16,13 +16,11 @@ import Error from "./Pages/Error";
 function App() {
   //DarkMode
   const [mode, setMode] = useState(false);
-
   return (
     <div className={`${mode && "Darkmode"}`}>
-      <div className=" min-h-[100vh] bg-yellow-500">
+      <div className=" min-h-[100vh] bg-neutral-400">
         <Router>
           <Navigation toggle={setMode} />
-
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/notes" element={<Index />} />
