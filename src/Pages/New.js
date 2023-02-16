@@ -1,9 +1,9 @@
-import CreateNote from "../Components/CreateNote.js";
+// import CreateNote from "../Components/CreateNote.js";
 
-export default function New() {
-  return (
-    <div className="">
-      <CreateNote />
-    </div>
-  );
-}
+// export default function New() {
+//   return (
+//     <div className="">
+//       <CreateNote />
+//     </div>
+//   );
+// }
