@@ -5,7 +5,7 @@ GitHub Repo [https://github.com/Gillesedgy/Module-4-Dashboard_Project]
 Deployed on Netlify 
 []
 
-# Descritption
+# Description
 
 Note-It is an app that allows the user to take down notes. 
 
