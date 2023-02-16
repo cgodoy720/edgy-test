@@ -9,6 +9,7 @@ import { Howl } from "howler";
 import error from ".././assets/error.mp3";
 //
 const API = process.env.REACT_APP_API_URL;
+
 export default function CreateNote() {
   // Create a function to play your sound effect
   const playMySound = (src) => {
