@@ -2,7 +2,6 @@ import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Components
-
 import Navigation from "./Components/Navigation";
 //Pages
 //! import Login from "./Components/Login"
@@ -23,6 +22,7 @@ function App() {
       <div className=" min-h-[100vh] bg-yellow-500">
         <Router>
           <Navigation toggle={setMode} />
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/notes" element={<Index />} />

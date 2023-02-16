@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+//* REACT-Icon
+import {ImCheckmark, ImCross} from 'react-icons/im'
 //
 const API = process.env.REACT_APP_API_URL;
 
@@ -32,7 +34,7 @@ export default function EditNote() {
 
   //TextChange
   const handleTextChange = (e) => {
-    setEdit({ ...note, [e.target.id]: e.target.value});
+    setEdit({ ...note, [e.target.id]: e.target.value });
   };
   // CheckBox
   const handleCheckChange = () => {
@@ -45,43 +47,40 @@ export default function EditNote() {
       (error) => navigate("/not-found")
     );
   }, [id, navigate]);
-  
+
   // Submit
   const handleSubmit = (e) => {
     e.preventDefault();
     updateNote(note, id);
   };
   return (
-    <div className="EditNote">
-    
-     <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label>
+    <div className=" ">
+      <form
+        className="bg-emerald-400 h-[25rem] m-4 p-3 "
+        onSubmit={handleSubmit}
+      >
+       <button className="  bg-emerald-800 hover:bg-emerald-700 p-2 rounded-md mb-2 ml-[90%]" onClick={()=>navigate('/notes')}><ImCross/></button>
+       <br />
         <input
+          className=" font-bold bg-emerald-400 leading-tight focus:outline-none"
           type="text"
           value={note.title}
           id="title"
           placeholder="Click to add title"
           onChange={handleTextChange}
         />
-        <br />
-        <label htmlFor="content">Note:</label>
-        {/* <input
-          type="text"
+        <textarea
+          className=" bg-emerald-400 w-full focus:outline-none resize-none"
           id="content"
+          // rows= "10"
+          // cold= "10"
           value={note.content}
           placeholder="Click to add text"
           onChange={handleTextChange}
-          required
-        /> */}
-        <textarea id="content"
-        rows= "10"
-        cold= "10"
-          value={note.content}
-          placeholder="Click to add text" onChange={handleTextChange}></textarea>
-          <p>WORD COUNTER</p>
-        <br />
-        <label htmlFor="date">Date:</label>
+        ></textarea>
+        {/* <label htmlFor="date">Date:</label> */}
         <input
+          className=" bg-emerald-400  focus:outline-none hover:cursor-pointer "
           type="date"
           id="date"
           value={note.date}
@@ -89,9 +88,11 @@ export default function EditNote() {
           onChange={handleTextChange}
           required
         />{" "}
-        <br />
-        <label htmlFor="time">Time</label>
+        {/* <label className="ml-2" htmlFor="time">
+          Time
+        </label> */}
         <input
+          className=" bg-emerald-400 focus:outline-none hover:cursor-pointer "
           type="time"
           id="time"
           value={note.time}
@@ -99,17 +100,18 @@ export default function EditNote() {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="is_bookmark">Save</label>
+        <label className="hover:cursor-pointer" htmlFor="is_bookmark">Save</label>
         <input
+          className="bg-emerald-400 hover:cursor-pointer "
           type="checkbox"
           id="is_bookmark"
           checked={note.is_bookmark}
           onChange={handleCheckChange}
         />
-        <input type="submit" />
-      </form> 
-
-
+        <button className=" bg-emerald-800 hover:bg-emerald-700 p-1  rounded-md" type="submit">Done</button>
+        {/* <input className=" bg-emerald-800 hover:bg-emerald-700 p-1 rounded-md" type="submit" /> */}
+     
+      </form>
     </div>
   );
 }

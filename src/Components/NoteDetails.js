@@ -1,8 +1,8 @@
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-//CSS
-import "./NoteDetails.css";
+
+import {ImPencil2} from 'react-icons/im'
 //TODO: Import DragDrop WHen Added
 
 const API = process.env.REACT_APP_API_URL;
@@ -43,8 +43,7 @@ function NoteDetails() {
           <span>{note.is_bookmark ? "⭐️" : null}</span>
         </h3>
         <h3 className="mx-3">
-          <span>{note.date}</span> @
-          <span> {note.time}</span>
+          <span>{note.date}</span> @<span> {note.time}</span>
         </h3>
       </header>
       <div className="note-body">
@@ -54,14 +53,23 @@ function NoteDetails() {
         <p>{note.is_bookmark ? "⭐️" : null}</p>
               <button disabled="disabled">✅</button>
       </footer> */}
-      <div className="flex bg-red-400 my-auto justify-around ">
-        <button className=" bg-neutral-800 hover:bg-red-800 py-2 px-4 rounded-md" onClick={deleteNote}>🗑️</button>
+      <div className="flex my-auto">
+        <button
+          className=" bg-neutral-800 hover:bg-red-800 py-2 px-4 rounded-md"
+          onClick={deleteNote}
+        >
+          🗑️
+        </button>
         <Link to={`/notes/${id}/edit`}>
           {" "}
-          <button className="bg-neutral-800 hover:bg-green-700 py-2 px-4 rounded-md">📝</button>
+          <button className="bg-neutral-800 hover:bg-green-700 py-2 px-4 rounded-md">
+          <ImPencil2 className="text-white"/>
+          </button>
         </Link>
         <Link to={`/notes`}>
-          <button className="bg-neutral-800 hover:bg-yellow-500 py-2 px-3 rounded-md text-white font-bold">Back</button>
+          <button className="bg-neutral-800 hover:bg-yellow-500 py-2 px-3 rounded-md text-white font-bold">
+        Back
+          </button>
         </Link>
       </div>
     </div>

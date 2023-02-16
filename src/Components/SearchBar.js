@@ -1,4 +1,3 @@
-import "./Search.css";
 import { MdSearch } from "react-icons/md";
 
 export const SearchBar = ({ setSearch, myNotes, setFiltered }) => {
@@ -17,7 +16,7 @@ export const SearchBar = ({ setSearch, myNotes, setFiltered }) => {
     }
   };
   return (
-    <div className="bg-red-200 flex justify-center mb-3">
+    <div className=" mt-3 flex justify-center mb-3">
       <MdSearch className="relative left-6 top-2" />
       <input
         className="px-8 py-1 leading-tight focus:outline-none "

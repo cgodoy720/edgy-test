@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import "./Nav.css";
+
+import {CiLight} from "react-icons/ci"
 export default function Navigation({ toggle }) {
   // let navigate = useNavigate();
   return (
@@ -20,7 +21,7 @@ export default function Navigation({ toggle }) {
           toggle((mode) => !mode);
         }}
       >
-        Mode
+        <CiLight/>
       </button>
     </div>
   );
