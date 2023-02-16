@@ -3,8 +3,8 @@
 [Render] (https://note-server-8ds8.onrender.com/)
 [GitHub Repo] (https://github.com/Gillesedgy/Module-4-Dashboard_Project)
 
-Deployed on Netlify
-[]
+[Deployed on Surge] (furtive-quicksand.surge.sh)
+
 
 # Description
 
@@ -23,3 +23,10 @@ Note-It is an app that allows the user to take down notes.
 9. As a user, I should be able to navigate to my lists page after clicking the back button.
 10. As s user, I should be able to navigate to an edit page after clicking the edit button.
 11. Once on the edit page, I should be able to make corrections and submit my changes and be taken back to the the main page. 
+12. As a user, I have should have the ability to search throught my notes using the search bar using keywords from note content.
+
+# BAck-End Reposotory
+[Back-End Repo] (https://github.com/Gillesedgy/Dashboard-Server)
+
+## Using Back-End Repo
+
