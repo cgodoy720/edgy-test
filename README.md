@@ -9,7 +9,7 @@
 Note-It is an app that allows the user to create, view, update and even delete any notes on their app.
 
 #Instructions
-*==Fork== and ==Clone== this repository
+*`Fork` and ==Clone== this repository
 *
 
 #How to use Note-It
