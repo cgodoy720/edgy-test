@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiX } from "react-icons/fi";
 import { ImPlus } from "react-icons/im";
+import { BsCheckSquare } from "react-icons/bs";
 //
 import { Howl } from "howler";
 //
@@ -75,30 +76,30 @@ export default function CreateNote() {
   };
 
   return (
-    <div
-    // className=" w-80 h-[10rem] "
-    >
+    <div>
       {formModal ? (
         <form
-          className="bg-emerald-400 h-[25rem] absolute z-10 m-4 p-3"
+          className="bg-emerald-400 h-[25rem] absolute z-10 m-4 p-3 rounded-br-xl "
           onSubmit={handleSubmit}
         >
           <button
             onClick={() => {
-             setNewNote({
-              title: "",
-              content: "",
-              date: "",
-              time: "",
-              is_bookmark: false,
-            }); setFormModal(false);
+              setNewNote({
+                title: "",
+                content: "",
+                date: "",
+                time: "",
+                is_bookmark: false,
+              });
+              setFormModal(false);
             }}
-            className="bg-green-500 p-2 rounded-md mb-2 ml-[90%]"
+            className="shadow-xl border border-cyan-900 bg-slate-600 hover:bg-slate-500 text-black p-2 rounded-md mb-2 ml-[90%]"
           >
             <FiX />
           </button>
           <br />
-          <label className="font-bold" htmlFor="title">
+
+          <label className="font-bold py-2" htmlFor="title">
             {" "}
             Title{" "}
           </label>
@@ -120,14 +121,14 @@ export default function CreateNote() {
             value={newNote.content}
             onChange={handleCharacterCount}
             required
-            // rows="5"
-            // cols="10"
+            // rows="4"
+            // cols="8"
           ></textarea>
           {/* //! CharCount */}
           <div className="p-2 ">
             {characterLimit - newNote.content.length} Characters Remaining
           </div>
-          {/* <label htmlFor="date">Date:</label> */}
+          <label htmlFor="date">Date:</label>
           <input
             className=" bg-emerald-400 focus:outline-none hover:cursor-pointer"
             type="date"
@@ -137,9 +138,9 @@ export default function CreateNote() {
             onChange={handleTextChange}
             required
           />
-          {/* <label className="ml-2 " htmlFor="time"> */}
-          Time:
-          {/* </label> */}
+          <label className="ml-2 " htmlFor="time">
+            Time:
+          </label>
           <input
             className="focus:outline-none bg-emerald-400 hover:cursor-pointer"
             type="time"
@@ -151,9 +152,9 @@ export default function CreateNote() {
           />
           <div>
             <div className="py-4">
-              {/* <label className=" mr-2" htmlFor="is_bookmark"> */}
-              Favorite
-              {/* </label> */}
+              <label className=" mr-2" htmlFor="is_bookmark">
+                Favorite
+              </label>
               <input
                 type="checkbox"
                 id="is_bookmark"
@@ -161,15 +162,21 @@ export default function CreateNote() {
                 onChange={handleCheckChange}
               />
             </div>
-            <div className="flex  justify-evenly">
-              <input className="bg-green-500 p-1 rounded-md" type="submit" />
-            </div>
+          </div>
+          <div className="flex justify-evenly">
+            <button
+              className="flex items-center justify-center gap-2 shadow-xl border border-cyan-900 bg-slate-600 w-full p-3 my-2 hover:bg-slate-500 rounded-xl text-black"
+              type="submit"
+            >
+              Submit
+              <BsCheckSquare />
+            </button>
           </div>
         </form>
       ) : (
         <div
           onClick={() => setFormModal(true)}
-          className="flex items-center justify-center pt-2"
+          className="flex items-center justify-center pt-2 z-10"
         >
           <a
             href="#_"
@@ -179,7 +186,7 @@ export default function CreateNote() {
 
             <span className="absolute top-0 left-0 w-full h-full -mt-1 transition-all duration-500 ease-in-out rotate-90 -translate-y-80 -translate-x-0 bg-white opacity-100 group-hover:-translate-y-8"></span>
 
-                  <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">
               <ImPlus />
             </span>
             <span className="absolute inset-0 border-2 border-white rounded-full"></span>

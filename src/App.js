@@ -3,27 +3,32 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Components
 import Navigation from "./Components/Navigation";
+import { SignUp } from "./Components/SignUp";
+import { Account } from "./Components/Account";
 //Pages
-//! import Login from "./Components/Login"
-import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import Show from "./Pages/Show";
 import New from "./Pages/New";
 import Edit from "./Pages/Edit";
 import { About } from "./Pages/About";
 import Error from "./Pages/Error";
+import LogIn from "./Components/LogIn";
 
 function App() {
   //DarkMode
   const [mode, setMode] = useState(false);
   return (
-    <div className={`${mode && "Darkmode"}`}>
-      <div className=" min-h-[100vh] bg-neutral-400">
+    <div className={`dark:bg-neutral-300 dark:text-black ${mode && "dark"} `}>
+      <div className=" min-h-[100vh] bg-neutral-300 dark:bg-slate-600 ">
         <Router>
-          <Navigation toggle={setMode} />
+          <Navigation toggle={setMode} mode={mode} />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/notes" element={<Index />} />
+            {/* USER ROUTES */}
+            <Route path="/" element={<LogIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/account" element={<Account />} />
+            {/* APP ROUTES */}
+                      <Route path="/notes" element={<Index />} />
             <Route path="/notes/:id" element={<Show />} />
             <Route path="/notes/new" element={<New />} />
             <Route path="/notes/:id/edit" element={<Edit />} />

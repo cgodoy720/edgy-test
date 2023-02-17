@@ -52,7 +52,7 @@ export default function Notes({
             {(provided) => {
               return (
                 <ul
-                  className="  [&>*:nth-child(odd)]:text-zinc-500 [&>*:nth-child(even)]:text-sky-400 flex flex-wrap gap-2"
+                  className="  [&>*:nth-child(odd)]:text-zinc-500 [&>*:nth-child(even)]:text-sky-400 flex flex-wrap justify-evenly gap-2"
                   {...provided.droppableProps}
                   ref={provided.ref}
                 >

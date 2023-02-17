@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Howl } from "howler";
 import { ImPencil2 } from "react-icons/im";
+import { BsTrash } from "react-icons/bs";
 //TODO: Import DragDrop WHen Added
 import trash from ".././assets/trash.mp3";
 const API = process.env.REACT_APP_API_URL;
@@ -66,22 +67,22 @@ function NoteDetails() {
       </footer> */}
       <div className="flex my-auto">
         <button
-          className=" bg-neutral-800 hover:bg-red-800 py-2 px-4 rounded-md"
+          className="mx-2 bg-neutral-800 hover:bg-red-800 py-2 px-5 rounded-md text-white"
           onClick={() => {
             playMySound(trash);
             deleteNote();
           }}
         >
-          🗑️
+          <BsTrash className="text-white" />
         </button>
         <Link to={`/notes/${id}/edit`}>
           {" "}
-          <button className="bg-neutral-800 hover:bg-green-700 py-2 px-4 rounded-md">
+          <button className="bg-neutral-800 hover:bg-green-700 py-4 px-5 rounded-md mx-2">
             <ImPencil2 className="text-white" />
           </button>
         </Link>
         <Link to={`/notes`}>
-          <button className="bg-neutral-800 hover:bg-yellow-500 py-2 px-3 rounded-md text-white font-bold">
+          <button className=" mx-2 bg-neutral-800 hover:bg-yellow-500 py-3 px-3 rounded-md text-white font-bold">
             Back
           </button>
         </Link>

@@ -1,6 +1,8 @@
 import { useState } from "react";
-// import { useFirebase } from 'firebase/app';
-import { auth } from "../firebase";
+import { Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { BiNote } from "react-icons/bi";
+import { app } from "./firebase";
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -9,67 +11,67 @@ const LogIn = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      await auth.login({ email, password });
-    } catch (err) {
-      setError(err.message);
-    }
+    // try {
+    //   await app.login({ email, password });
+    // } catch (err) {
+    //   setError(err.message);
+    // }
   };
   return (
-    <div className="w-full max-w-xs">
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <div className="mb-4">
-          <label
-            htmlFor="username"
-            className="block ext-gray-700 text-sm font-bold mb-2"
-          >
-            Username
-          </label>
+    <div className="max-w-[700px] mx-auto my-16 p-16">
+      <div>
+        <h1 className="text-3xl font-semibold">Log in to you account</h1>
+        <div>
+          <p className="py-2">
+            Don't have an account? No worries,{" "}
+            <Link className="underline" to="/signup">
+              Sign Up
+            </Link>
+          </p>
+          <p className="p-2">
+            Go to your{" "}
+            <Link className="underline" to="/account">
+              Account{" "}
+            </Link>
+          </p>
+        </div>
+      </div>
+
+      <form onSubmit={handleLogin}>
+        <div className="flex flex-col py-2">
+          {" "}
+          <label htmlFor="email">Email</label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
-            type="text"
-            placeholder="Username"
+            className="border p-3"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />{" "}
+        </div>
+
+        <div className="flex flex-col py-2">
+          <label htmlFor="password"></label>
+          <input
+            className="border p-3"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="mb-6">
-          <label
-            htmlFor="password"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Password
-          </label>
-          <input
-            type="password"
-            className="block shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password"
-            placeholder="******************"
-          />
+        <div className=" flex flex-col ">
+          <button className=" flex items-center justify-center gap-2 shadow-xl border border-sky-900 bg-sky-500 w-full p-4 my-3 hover:bg-sky-400 rounded-xl">
+            <BiNote /> Log In
+          </button>
+          <button className=" flex items-center justify-center gap-2 shadow-xl border border-cyan-900 bg-cyan-500 w-full p-4 my-3 hover:bg-sky-400 rounded-xl ">
+            <FcGoogle /> Google
+          </button>
         </div>
       </form>
+      {error && <div>{error}</div>}
     </div>
   );
 };
-// return (
-//   <div>
-//     <h1>LOGIN MODAL</h1>
-//     <form onSubmit={handleLogin}>
-//       <input
-//         type="email"
-//         placeholder="Email"
-//         value={email}
-//         onChange={(e) => setEmail(e.target.value)}
-//       />
-//       <input
-//         type="password"
-//         placeholder="Password"
-//         value={password}
-//         onChange={(e) => setPassword(e.target.value)}
-//       />
-//       <button type="submit">Login</button>
-//     </form>
-//     {error && <div>{error}</div>}
-//   </div>
-// );
 
 export default LogIn;
