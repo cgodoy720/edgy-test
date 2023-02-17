@@ -59,7 +59,7 @@ export default function EditNote() {
         className="bg-emerald-400 h-[25rem] m-4 p-3 "
         onSubmit={handleSubmit}
       >
-       <button className="  bg-emerald-800 hover:bg-emerald-700 p-2 rounded-md mb-2 ml-[90%]" onClick={()=>navigate('/notes')}><ImCross/></button>
+       <button className="  bg-emerald-800 hover:bg-emerald-700 p-2 rounded-md mb-2 ml-[90%]" onClick={()=>navigate(`/notes/${id}`)}><ImCross/></button>
        <br />
         <input
           className=" font-bold bg-emerald-400 leading-tight focus:outline-none"

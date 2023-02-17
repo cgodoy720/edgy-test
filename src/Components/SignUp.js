@@ -43,7 +43,7 @@ export const SignUp = () => {
             <FcGoogle /> Sign Up with Google
           </button>
           {/* <button className="shadow-xl border border-red-900 bg-red-500 w-full p-4 my-3 hover:bg-red-400">
-            Sign Up
+            FaceBook
           </button> */}
         </div>
       </form>

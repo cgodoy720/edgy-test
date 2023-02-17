@@ -61,9 +61,13 @@ const LogIn = () => {
           />
         </div>
         <div className=" flex flex-col ">
-          <button className=" flex items-center justify-center gap-2 shadow-xl border border-sky-900 bg-sky-500 w-full p-4 my-3 hover:bg-sky-400 rounded-xl">
-            <BiNote /> Log In
-          </button>
+          <Link to="/notes">
+            {" "}
+            <button className=" flex items-center justify-center gap-2 shadow-xl border border-sky-900 bg-sky-500 w-full p-4 my-3 hover:bg-sky-400 rounded-xl">
+              <BiNote /> Log In
+            </button>
+          </Link>
+
           <button className=" flex items-center justify-center gap-2 shadow-xl border border-cyan-900 bg-cyan-500 w-full p-4 my-3 hover:bg-sky-400 rounded-xl ">
             <FcGoogle /> Google
           </button>
