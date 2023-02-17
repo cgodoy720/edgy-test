@@ -1,5 +1,8 @@
-# Getting Started with Note App
-[GitHub Repo] (https://github.com/Gillesedgy/Module-4-Dashboard_Project)
+ Getting Started with Note App
+
+* FORK and CLONE [GitHub Repo] (https://github.com/Gillesedgy/Module-4-Dashboard_Project) only to be used with [Back-End Repo] (https://github.com/Gillesedgy/Dashboard-Server)
+[Render] (https://note-server-8ds8.onrender.com/)
+
 
 # Description
 
