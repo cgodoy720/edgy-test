@@ -1,12 +1,21 @@
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-
-import {ImPencil2} from 'react-icons/im'
+import { Howl } from "howler";
+import { ImPencil2 } from "react-icons/im";
 //TODO: Import DragDrop WHen Added
-
+import trash from ".././assets/trash.mp3";
 const API = process.env.REACT_APP_API_URL;
 function NoteDetails() {
+  const playMySound = (src) => {
+    const mySound = new Howl({
+      src,
+      volume: 0.25,
+      html5: true,
+    });
+    mySound.play();
+  };
+
   const [note, setNote] = useState([]);
   let { id } = useParams();
   let navigate = useNavigate();
@@ -28,7 +37,9 @@ function NoteDetails() {
       .delete(`${API}/notes/${id}`)
       .then(
         () => {
-          navigate(`/notes`);
+          setTimeout(() => {
+            navigate(`/notes`);
+          }, 1000);
         },
         (error) => console.error(error)
       )
@@ -56,19 +67,22 @@ function NoteDetails() {
       <div className="flex my-auto">
         <button
           className=" bg-neutral-800 hover:bg-red-800 py-2 px-4 rounded-md"
-          onClick={deleteNote}
+          onClick={() => {
+            playMySound(trash);
+            deleteNote();
+          }}
         >
           🗑️
         </button>
         <Link to={`/notes/${id}/edit`}>
           {" "}
           <button className="bg-neutral-800 hover:bg-green-700 py-2 px-4 rounded-md">
-          <ImPencil2 className="text-white"/>
+            <ImPencil2 className="text-white" />
           </button>
         </Link>
         <Link to={`/notes`}>
           <button className="bg-neutral-800 hover:bg-yellow-500 py-2 px-3 rounded-md text-white font-bold">
-        Back
+            Back
           </button>
         </Link>
       </div>

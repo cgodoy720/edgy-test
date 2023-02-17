@@ -177,7 +177,7 @@ export default function CreateNote() {
           >
             <span className="w-40 h-40 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
 
-            <span className="absolute top-0 left-0 w-60 h-60 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-y-60 -translate-x-36 bg-white opacity-100 group-hover:-translate-y-8"></span>
+            <span className="absolute top-0 left-0 w-full h-full -mt-1 transition-all duration-500 ease-in-out rotate-90 -translate-y-80 -translate-x-0 bg-white opacity-100 group-hover:-translate-y-8"></span>
 
                   <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">
               <ImPlus />
