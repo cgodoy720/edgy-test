@@ -8,6 +8,10 @@
 
 Note-It is an app that allows the user to create, view, update and even delete any notes on their app.
 
+#Instructions
+*==Fork== and ==Clone== this repository
+*
+
 #How to use Note-It
 * THe home page will soon allow the a user to sign in or create an account to use their own instance of the app.
 * Download the Back-end Repo as well, in order to use this app on your local machine. Else, Launch this [Deployed on Surge] (furtive-quicksand.surge.sh) to use on any machine or device at any time and place, as long as you have internet connectivity.
