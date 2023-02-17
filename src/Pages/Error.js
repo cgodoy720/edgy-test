@@ -30,7 +30,7 @@ export default function Error() {
                 <MdOutlineMapsHomeWork className="m-2" />
               </button>
             </Link>
-            <Link to="/">
+            <Link to="/notes">
               <button className="px-5 py-3 mt-6 text-sm font-medium text-white bg-indigo-600 rounded hover:bg-indigo-700 focus:outline-none focus:ring m-auto flex items-center justify-center ">
                 Back To Notes
                 < BiNote className="m-2" />

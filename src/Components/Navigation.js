@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CiLight } from "react-icons/ci";
 import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { GiExitDoor } from "react-icons/gi";
+import {MdManageAccounts } from "react-icons/md";
 export default function Navigation({ toggle }) {
   return (
     <div className="flex justify-between p-2 bg-slate-500 sticky top-0 z-20 ">
@@ -27,6 +28,11 @@ export default function Navigation({ toggle }) {
         >
           <CiLight />
         </button>
+        <Link to="/account">
+          <button className="block justify-center bg-blue-300 p-1 py-3 rounded-md hover:cursor-pointer mx-1">
+            <MdManageAccounts />
+          </button>
+        </Link>
         <Link to="">
           <button className="block justify-center bg-blue-300 p-1 py-3 rounded-md hover:cursor-pointer mx-1">
             <GiExitDoor />
