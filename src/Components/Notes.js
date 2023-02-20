@@ -47,15 +47,15 @@ export default function Notes({
         myNotes={myNotes}
       />
       <div className=" flex ">
-        <DragDropContext>
-          <Droppable droppableId="note">
-            {(provided) => {
-              return (
+        {/* <DragDropContext> */}
+          {/* <Droppable droppableId="note">
+            {(provided) => { */}
+              {/* return ( */}
                 <ul
                   className="  [&>*:nth-child(odd)]:text-zinc-500 [&>*:nth-child(even)]:text-sky-400 flex flex-wrap justify-evenly gap-2"
-                  {...provided.droppableProps}
-                  ref={provided.ref}
-                >24
+                  // {...provided.droppableProps}
+                  // ref={provided.ref}
+                >
                 
                   <CreateNote
                     handleSubmit={handleSubmit}
@@ -68,19 +68,19 @@ export default function Notes({
                       index
                     ) => {
                   
-                      return (
-                        <Draggable
-                          key={id}
-                          draggableId="notes_list"
-                          index={index}
-                        >
-                          {(provided) => {
+                      // return (
+                        // <Draggable
+                        //   key={id}
+                        //   draggableId="notes_list"
+                        //   index={index}
+                        // >
+                          // {(provided) => {
                             return (
                               <li
                                 className="bg-sky-100 w-80 h-[10rem] pl-2 rounded-xl"
-                                {...provided.draggableProps}
-                                {...provided.dragHandleProps}
-                                ref={provided.innerRef}
+                                // {...provided.draggableProps}
+                                // {...provided.dragHandleProps}
+                                // ref={provided.innerRef}
                               >
                                 <Link to={`/notes/${id}`}>
                                   <div className="Header">
@@ -95,16 +95,16 @@ export default function Notes({
                                 <Files />
                               </li>
                             );
-                          }}
-                        </Draggable>
-                      );
+                          // }}
+                        // </Draggable>
+                      // );
                     }
                   )}
                 </ul>
-              );
-            }}
-          </Droppable>
-        </DragDropContext>
+              {/* ); */}
+            {/* // }} */}
+          {/* </Droppable> */}
+        {/* </DragDropContext> */}
       </div>
     </div>
   );
