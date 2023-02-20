@@ -55,7 +55,8 @@ export default function Notes({
                   className="  [&>*:nth-child(odd)]:text-zinc-500 [&>*:nth-child(even)]:text-sky-400 flex flex-wrap justify-evenly gap-2"
                   {...provided.droppableProps}
                   ref={provided.ref}
-                >
+                >24
+                
                   <CreateNote
                     handleSubmit={handleSubmit}
                     handleCheckChange={handleCheckChange}
